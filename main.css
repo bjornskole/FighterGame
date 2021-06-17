@@ -1,0 +1,33 @@
+.page {
+  border: 1px solid black;
+  font-family: sans-serif;
+
+  border-radius: 10px;
+  margin: 1%;
+  /* margin-left: 20%;
+  margin-right: 20%; */
+
+  display: grid;
+  height: 100%;
+  /* overflow: auto; */
+  justify-content: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 100% 100% 100%;
+  grid-template-areas:
+    "arena arena arena"
+    "btnCard btnCard btnCard";
+}
+.arena {
+  height: 1100px;
+  border: 1px solid black;
+  grid-area: arena;
+}
+.btnCard {
+  height: 500px;
+  border: 1px solid black;
+  grid-area: btnCard;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
