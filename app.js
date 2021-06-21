@@ -1,5 +1,4 @@
 // model
-
 const player = {
   healtVal: 100,
   HealtBarIndex: 40,
@@ -18,7 +17,7 @@ const computer = {
   healtVal: 150,
   HealtBarIndex: 40,
   HealtBar: 40,
-  attackPower: 35,
+  attackPower: 33,
   anim: {
     punch: {
       pic1: `<img class="computer" src="./assets/computer/CkBlue1.png" /> `,
@@ -28,7 +27,7 @@ const computer = {
     shot: "./assets/computer/Cfireball2.png",
   },
 };
-let chosenArena = false;
+
 let playerPic = player.anim.punch.pic1;
 let computerPic = computer.anim.punch.pic1;
 let playerShot = {
@@ -43,7 +42,7 @@ let computerShot = {
   styleOption: "right",
   move: 0,
 };
-
+let chosenArena = false;
 const arena = {
   arena1: `<img class="arena" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/emBDw7Sa.gif" />`,
   arena2: `<img class="arena" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/HfCURPUa.gif" />`,
@@ -123,6 +122,7 @@ function attack() {
     playerPic = player.anim.punch.pic1;
     computerAttack();
     healthHandler(computer, player);
+    callBack = "Player hits";
     app();
   }, 1500);
   app();
@@ -185,7 +185,9 @@ function computerAttack() {
     console.log(randomShot);
     randomShot === 2
       ? ((callBack = "Computer missed"), app())
-      : (healthHandler(player, computer), app());
+      : (healthHandler(player, computer),
+        (callBack = "computer hits, Booth loose healt"),
+        app());
     app();
   }, 2500);
   app();
