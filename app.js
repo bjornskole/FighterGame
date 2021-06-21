@@ -43,11 +43,12 @@ let computerShot = {
   styleOption: "right",
   move: 0,
 };
-let callBack = "";
+
 const arena = {
   arena1: `<img class="arena" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/emBDw7Sa.gif" />`,
   arena2: `<img class="arena" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/HfCURPUa.gif" />`,
 };
+let callBack = "Attack or try blocking";
 // View
 app();
 function app() {
@@ -103,7 +104,7 @@ function app() {
 
 // Controller
 function attack() {
-  callBack = "";
+  callBack = "Attack or try blocking";
   setTimeout(function () {
     playerPic = player.anim.punch.pic2;
     app();
@@ -123,7 +124,7 @@ function attack() {
 }
 //
 function block() {
-  callBack = "";
+  callBack = "Attack or try blocking";
   let random = Math.floor(Math.random() * 2);
   random === 1
     ? (setTimeout(function () {
