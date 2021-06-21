@@ -47,6 +47,8 @@ let computerShot = {
 const arena = {
   arena1: `<img class="arena" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/emBDw7Sa.gif" />`,
   arena2: `<img class="arena" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/HfCURPUa.gif" />`,
+  arena3: `<img class="arena" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/jxoPOUxa.gif" />`,
+  arena4: `<img class="arena" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/nYuVFMIa.gif" />`,
 };
 let callBack = "Attack or try blocking";
 // View
@@ -59,13 +61,16 @@ function app() {
     <div class="arenaBtns" >
     <button onclick="choseArena(arena.arena1)"><img class="arenaBtn" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/emBDw7Sa.gif" /></button>
     <button onclick="choseArena(arena.arena2)"><img class="arenaBtn" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/HfCURPUa.gif" /></button>
+    <button onclick="choseArena(arena.arena3)"><img class="arenaBtn" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/jxoPOUxa.gif" /></button>
+    <button onclick="choseArena(arena.arena4)"><img class="arenaBtn" src="http://imgs.abduzeedo.com/files/articles/wicked-fighting-game-background-gifs/nYuVFMIa.gif" /></button>
     </div>
     </div>
     `)
     : player.HealtBar <= 0
     ? ((document.getElementById("Team").innerHTML = `
     <div class="score" style="color: red">
-       You loose
+       <h1>You loose</h1>
+       </br>
        <button onclick="location.reload();">Play again</button>
     </div>
     `),
@@ -73,7 +78,7 @@ function app() {
     : computer.HealtBar <= 0
     ? ((document.getElementById("Team").innerHTML = `
     <div class="score" style="color: green">
-       You Win
+       <h1>You Win</h1> </br>
        <button onclick="location.reload();">Play again</button>
     </div>
     `),
