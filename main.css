@@ -1,33 +1,72 @@
 .page {
   border: 1px solid black;
   font-family: sans-serif;
-
   border-radius: 10px;
   margin: 1%;
-  /* margin-left: 20%;
-  margin-right: 20%; */
-
   display: grid;
   height: 100%;
-  /* overflow: auto; */
   justify-content: center;
   grid-template-columns: 100%;
   grid-template-rows: 100% 100% 100%;
   grid-template-areas:
-    "arena arena arena"
+    "arena player arena"
     "btnCard btnCard btnCard";
 }
+.top-section {
+  height: 400px;
+  position: relative;
+}
 .arena {
-  height: 1100px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
   border: 1px solid black;
   grid-area: arena;
 }
 .btnCard {
-  height: 500px;
+  height: 100px;
   border: 1px solid black;
   grid-area: btnCard;
 }
-img {
-  width: 100%;
-  height: 100%;
+.playerHealtBar {
+  background-color: green;
+  height: 10px;
+}
+
+.player {
+  height: 200px;
+  position: absolute;
+  z-index: 2;
+  grid-area: player;
+  left: 10%;
+  bottom: 4%;
+}
+.shot {
+  height: 10%;
+  position: absolute;
+  z-index: 3;
+  grid-area: player;
+  left: 11%;
+  bottom: 30%;
+}
+.cshot {
+  height: 10%;
+  position: absolute;
+  z-index: 3;
+  grid-area: player;
+  right: 11%;
+  bottom: 30%;
+}
+.computer {
+  height: 200px;
+  position: absolute;
+  z-index: 2;
+  grid-area: player;
+  right: 10%;
+  bottom: 4%;
+}
+button {
+  height: 70px;
+  width: 400px;
 }
